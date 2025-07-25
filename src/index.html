@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../dist/output.css" rel="stylesheet" />
+    <!-- Add Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Theme & Font Switcher</title>
+    <!-- Add Alpine.js -->
+    <script defer src="../node_modules/alpinejs/dist/cdn.min.js"></script>
+    <style>
+      /* Default font */
+      body {
+        font-family: "Sarabun", sans-serif;
+      }
+      /* Font transition */
+      .font-transition {
+        transition: font-family 0.3s ease;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-base-100 font-transition">
+    <!-- Navbar with theme and font selectors -->
+    <div class="navbar bg-base-200 shadow-lg">
+      <div class="flex-1">
+        <h1 class="text-2xl font-bold px-4">Theme & Font</h1>
+      </div>
+      <div class="flex-none gap-4">
+        <!-- Theme Switcher -->
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Theme</span>
+          </label>
+          <select class="select select-bordered theme-controller w-full">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+            <option value="cupcake">Cupcake</option>
+            <option value="corporate">Corporate</option>
+          </select>
+        </div>
+
+        <!-- Font Switcher -->
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Font</span>
+          </label>
+          <select class="select select-bordered font-controller w-full">
+            <option value="sarabun" class="font-sarabun">Sarabun</option>
+            <option value="prompt" class="font-prompt">Prompt</option>
+          </select>
+        </div>
+
+        <!-- Light/Dark Mode Toggle -->
+        <div class="form-control">
+          <label class="label cursor-pointer">
+            <span class="label-text mr-2">Mode</span>
+            <input type="checkbox" class="toggle mode-toggle" />
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="container mx-auto p-4">
+      <!-- Theme showcase section -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+        <!-- Colors showcase -->
+        <div class="card bg-base-100 shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title">Theme Colors</h2>
+            <div class="grid grid-cols-2 gap-2">
+              <div class="bg-primary p-4 text-primary-content rounded">
+                Primary
+              </div>
+              <div class="bg-secondary p-4 text-secondary-content rounded">
+                Secondary
+              </div>
+              <div class="bg-accent p-4 text-accent-content rounded">
+                Accent
+              </div>
+              <div class="bg-neutral p-4 text-neutral-content rounded">
+                Neutral
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Components showcase -->
+        <div class="card bg-base-100 shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title">Components</h2>
+            <div class="space-y-2">
+              <button class="btn btn-primary">Button</button>
+              <input
+                type="text"
+                placeholder="Input"
+                class="input input-bordered w-full"
+              />
+              <div class="badge badge-primary">Badge</div>
+              <progress
+                class="progress progress-primary w-full"
+                value="70"
+                max="100"
+              ></progress>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Font Showcase Section -->
+      <div class="card bg-base-100 shadow-xl mb-4">
+        <div class="card-body">
+          <h2 class="card-title mb-4">Font Showcase</h2>
+          <div class="grid gap-4">
+            <div class="space-y-2">
+              <h3 class="text-lg font-bold">Current Settings:</h3>
+              <p>Theme: <span class="current-theme font-bold">light</span></p>
+              <p>Font: <span class="current-font font-bold">sarabun</span></p>
+              <p>Mode: <span class="current-mode font-bold">light</span></p>
+            </div>
+            <div class="space-y-2">
+              <h3 class="text-xl">Font Sample</h3>
+              <p class="text-lg">ตัวอย่างภาษาไทย - Thai Language Sample</p>
+              <p>การเดินทางขากลับคงจะเหงาน่าดู ผมไม่รู้ทำไมผมถึงคิดถึงเธอ</p>
+              <p class="text-sm">
+                The quick brown fox jumps over the lazy dog - 0123456789
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Information Section -->
+      <div class="card bg-base-100 shadow-xl mb-4">
+        <div class="card-body">
+          <h2 class="card-title">Project Information</h2>
+
+          <!-- Project Details -->
+          <div class="grid md:grid-cols-2 gap-6">
+            <!-- Basic Info -->
+            <div class="space-y-4">
+              <div>
+                <h3 class="text-lg font-bold mb-2">Basic Information</h3>
+                <table class="table table-zebra">
+                  <tbody>
+                    <tr>
+                      <td class="font-bold">Project Name</td>
+                      <td>Demo</td>
+                    </tr>
+                    <tr>
+                      <td class="font-bold">Version</td>
+                      <td>1.0.0</td>
+                    </tr>
+                    <tr>
+                      <td class="font-bold">License</td>
+                      <td>ISC</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Dependencies -->
+              <div>
+                <h3 class="text-lg font-bold mb-2">Dependencies</h3>
+                <table class="table table-zebra">
+                  <thead>
+                    <tr>
+                      <th>Package</th>
+                      <th>Version</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>tailwindcss</td>
+                      <td>^3.4.0</td>
+                    </tr>
+                    <tr>
+                      <td>daisyui</td>
+                      <td>^4.0.0</td>
+                    </tr>
+                    <tr>
+                      <td>alpinejs</td>
+                      <td>^3.x.x</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Project Structure -->
+            <div>
+              <h3 class="text-lg font-bold mb-2">Project Structure</h3>
+              <pre
+                class="bg-base-200 p-4 rounded-lg overflow-x-auto"
+              ><code>demo/
+├── dist/
+│   └── output.css
+├── src/
+│   ├── index.html
+│   └── input.css
+├── .env
+├── package.json
+├── package-lock.json
+└── tailwind.config.js</code></pre>
+            </div>
+          </div>
+
+          <!-- Features -->
+          <div class="mt-6">
+            <h3 class="text-lg font-bold mb-2">Features</h3>
+            <div class="grid md:grid-cols-2 gap-4">
+              <ul class="list-disc list-inside space-y-2">
+                <li>
+                  Multiple theme support:
+                  <ul class="list-disc list-inside ml-4">
+                    <li>Light theme (Custom OKLCH colors)</li>
+                    <li>Dark theme</li>
+                    <li>Cupcake theme</li>
+                    <li>Corporate theme</li>
+                  </ul>
+                </li>
+                <li>
+                  Font family support:
+                  <ul class="list-disc list-inside ml-4">
+                    <li>Sarabun (Thai + Latin)</li>
+                    <li>Prompt (Thai + Latin)</li>
+                  </ul>
+                </li>
+              </ul>
+              <ul class="list-disc list-inside space-y-2">
+                <li>Theme persistence with localStorage</li>
+                <li>Smooth transitions between themes</li>
+                <li>Responsive design</li>
+                <li>Thai language support</li>
+                <li>Light/Dark mode toggle</li>
+                <li>Custom theme colors in OKLCH</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- NPM Scripts -->
+          <div class="mt-6">
+            <h3 class="text-lg font-bold mb-2">Available Scripts</h3>
+            <div class="grid gap-2">
+              <div class="bg-base-200 p-4 rounded-lg">
+                <code>npm run build</code>
+                <p class="text-sm mt-1">Builds the CSS output file</p>
+              </div>
+              <div class="bg-base-200 p-4 rounded-lg">
+                <code>npm run watch</code>
+                <p class="text-sm mt-1">Watches for changes and rebuilds CSS</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Alpine.js Test Section -->
+      <div class="card bg-base-100 shadow-xl mb-4">
+        <div class="card-body">
+          <h2 class="card-title">Alpine.js Test</h2>
+
+          <!-- Counter Component -->
+          <div x-data="{ count: 0 }" class="space-y-4">
+            <div class="text-center">
+              <span class="text-4xl font-bold" x-text="count">0</span>
+            </div>
+            <div class="flex justify-center gap-2">
+              <button class="btn btn-primary" x-on:click="count++">
+                Increment
+              </button>
+              <button class="btn btn-secondary" x-on:click="count--">
+                Decrement
+              </button>
+              <button class="btn btn-accent" x-on:click="count = 0">
+                Reset
+              </button>
+            </div>
+          </div>
+
+          <!-- Toggle Component -->
+          <div x-data="{ open: false }" class="mt-6">
+            <button class="btn" x-on:click="open = !open">
+              Toggle Content
+            </button>
+
+            <div
+              x-show="open"
+              x-transition
+              class="mt-4 p-4 bg-base-200 rounded-lg"
+            >
+              <p>This content can be toggled with Alpine.js!</p>
+              <p class="mt-2">It even has a nice transition effect.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Alert section -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="alert alert-info">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            class="stroke-current shrink-0 w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            ></path>
+          </svg>
+          <div>Settings applied successfully!</div>
+        </div>
+        <div class="alert alert-success">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="stroke-current shrink-0 h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+          <span>All features are working!</span>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Get all controllers and displays
+      const themeController = document.querySelector(".theme-controller");
+      const fontController = document.querySelector(".font-controller");
+      const modeToggle = document.querySelector(".mode-toggle");
+      const currentThemeDisplay = document.querySelector(".current-theme");
+      const currentFontDisplay = document.querySelector(".current-font");
+      const currentModeDisplay = document.querySelector(".current-mode");
+
+      // Load saved preferences or set defaults
+      const savedTheme = localStorage.getItem("theme") || "light";
+      const savedFont = localStorage.getItem("font") || "sarabun";
+      const savedMode = localStorage.getItem("mode") || "light";
+
+      // Apply saved preferences
+      document.documentElement.setAttribute("data-theme", savedTheme);
+      document.body.classList.add(`font-${savedFont}`);
+      themeController.value = savedTheme;
+      fontController.value = savedFont;
+      modeToggle.checked = savedMode === "dark";
+
+      // Update displays
+      currentThemeDisplay.textContent = savedTheme;
+      currentFontDisplay.textContent = savedFont;
+      currentModeDisplay.textContent = savedMode;
+
+      // Theme change handler
+      themeController.addEventListener("change", function () {
+        const theme = this.value;
+        document.documentElement.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+        currentThemeDisplay.textContent = theme;
+      });
+
+      // Font change handler
+      fontController.addEventListener("change", function () {
+        const font = this.value;
+        document.body.classList.remove("font-sarabun", "font-prompt");
+        document.body.classList.add(`font-${font}`);
+        localStorage.setItem("font", font);
+        currentFontDisplay.textContent = font;
+      });
+
+      // Mode toggle handler
+      modeToggle.addEventListener("change", function () {
+        const mode = this.checked ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", mode);
+        localStorage.setItem("mode", mode);
+        currentModeDisplay.textContent = mode;
+        themeController.value = mode;
+        currentThemeDisplay.textContent = mode;
+      });
+
+      // Add transitions
+      document.body.style.transition =
+        "background-color 0.3s ease, color 0.3s ease";
+    </script>
+  </body>
+</html>
